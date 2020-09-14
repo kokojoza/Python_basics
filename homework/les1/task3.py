@@ -2,6 +2,8 @@
 # Например, пользователь ввёл число 3. Считаем 3 + 33 + 333 = 369.
 
 n = input('Введите число: ')
-two = n + n
-three = n + n + n
-print(f"{int(n) + int(two) + int(three)}")
+# two = n + n
+# three = n + n + n
+# print(f"{int(n) + int(two) + int(three)}")
+
+print(f"{int(n) + int(n * 2) + int(n * 3)}") # упрощенный вариант

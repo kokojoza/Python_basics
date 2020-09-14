@@ -4,8 +4,20 @@
 # не менее b километров. Программа должна принимать значения параметров a и b и выводить
 # одно натуральное число — номер дня
 
-distance = int(input('Результат за первый день: '))
-final_distance = int(input('Необходимо км: '))
+while True:
+    distance = input('Результат за первый день: ')
+    if distance.isdigit():
+        distance = int(distance)
+        break
+    print('Ошибка введено не число')
+
+while True:
+    final_distance = input('Необходимо км: ')
+    if final_distance.isdigit():
+        final_distance = int(final_distance)
+        break
+    print('Ошибка введено не число')
+
 i = 1
 while distance < final_distance:
     # print(f"{i}-й день: {distance}") расчет каждого дня
