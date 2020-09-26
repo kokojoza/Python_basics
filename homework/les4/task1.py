@@ -3,11 +3,16 @@
 # (выработка в часах * ставка в час) + премия.
 # Для выполнения расчета для конкретных значений необходимо запускать скрипт с параметрами.
 
+def payroll(output_in_hours: float, rate_per_hour: float, premium:float) -> float:
+    return output_in_hours * rate_per_hour + premium
+
 from sys import argv
 
-script_name, output_in_hours, rate_per_hour, premium = argv
+script_name, output_in_hours, rate_per_hour, premium, *_ = argv
+
 try:
-    output_in_hours, rate_per_hour, premium = float(output_in_hours), float(rate_per_hour), float(premium)
-    print(f"'ЗП: '{output_in_hours * rate_per_hour + premium}")
-except ValueError:
-    print('Не числа')
+    result = payroll(float(output_in_hours), float(rate_per_hour), float(premium))
+    print(f"'ЗП: '{result}")
+except ValueError as e:
+    print('Ошибка ввода')
+    print(e)
