@@ -6,8 +6,6 @@
 # Подсказка: факториал числа n — произведение чисел от 1 до n.
 # Например, факториал четырёх 4! = 1 * 2 * 3 * 4 = 24.
 
-from functools import reduce
-from itertools import cycle
 from itertools import count
 from math import factorial
 
