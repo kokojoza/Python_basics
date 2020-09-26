@@ -11,12 +11,15 @@ from itertools import cycle
 from itertools import count
 from math import factorial
 
-def fact(n):
-    for el in count(1):
-        if el > n:
-            break
-        else:
-            yield factorial(el)
+def fact(n: int):
+    if n > 0:
+        for el in count(1):
+            if el > n:
+                break
+            else:
+                yield factorial(el)
+    else:
+        raise ValueError('Только > 0')
 
-for i in fact(4):
+for i in fact(9):
     print(i)
