@@ -9,7 +9,7 @@
 # Подсказка: сложение элементов матриц выполнять поэлементно — первый элемент
 # первой строки первой матрицы складываем с первым элементом первой строки второй матрицы и т.д.
 
-
+import copy
 
 
 class Matrix:
@@ -23,11 +23,11 @@ class Matrix:
         return _result
 
     def __add__(self, other):
-        _new_matrix = self.data
+        _new_matrix = copy.deepcopy(self.data)
         try:
             for i in range(len(self.data)):
                 for j in range(len(self.data[0])):
-                    _new_matrix[i][j] = self.data[i][j] + other.data[i][j]
+                    _new_matrix[i][j] = _new_matrix[i][j] + other.data[i][j]
             return Matrix(_new_matrix)
         except IndexError:
             print('Ошибка')
@@ -39,6 +39,7 @@ if __name__ == '__main__':
     b = Matrix([[1, 2, 3, 4], [5, 6, 7, 8]])
     c = a + b
     print(c)
+    print(a)
     e = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     print(e)
     r = Matrix([[1.9, 2.8, 3.7], [4, 5, 6]])
